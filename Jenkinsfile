@@ -24,9 +24,9 @@ node('build-slave') {
                 env.NODE_ENV = "build"
                 print "Environment will be : ${env.NODE_ENV}"
                 sh '''
-                    export JAVA_HOME=/usr/lib/jvm/jdk-11.0.2
+                    /*export JAVA_HOME=/usr/lib/jvm/jdk-11.0.2
                     export PATH=$JAVA_HOME/bin:$PATH
-                    echo $(java -version)
+                    echo $(java -version)*/
                     mvn clean install -DskipTests
                     mvn play2:dist -pl analytics-api
                 '''
